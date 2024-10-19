@@ -1,0 +1,135 @@
+body { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px; /* Aumentamos el ancho para acomodar más botones */
+}
+
+#display {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 60px);
+    gap: 10px;
+}
+
+.btn {
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+}
+
+/* Asignación de colores según el tipo de botón */
+[data-area="c"],
+[data-area="parenthesis-left"],
+[data-area="parenthesis-right"],
+[data-area="percentage"] {
+    background-color: #6c757d; /* Gris para funciones superiores */
+}
+
+[data-area="factorial"],
+[data-area="sin"],
+[data-area="cos"],
+[data-area="tan"] {
+    background-color: #17a2b8; /* Azul claro para funciones trigonométricas y factorial */
+}
+
+[data-area="sqrt"],
+[data-area="power"],
+[data-area="divide"],
+[data-area="multiply"],
+[data-area="subtract"],
+[data-area="add"] {
+    background-color: #ffc107; /* Amarillo para operadores básicos */
+}
+
+[data-area="7"],
+[data-area="8"],
+[data-area="9"],
+[data-area="4"],
+[data-area="5"],
+[data-area="6"],
+[data-area="1"],
+[data-area="2"],
+[data-area="3"],
+[data-area="0"],
+[data-area="decimal"] {
+    background-color: #007BFF; /* Azul para números y constantes */
+}
+
+[data-area="π"],
+[data-area="log"],
+[data-area="ln"],
+[data-area="e"] {
+    background-color: #28a745; /* Verde para π, logaritmos y constantes */
+}
+
+[data-area="equals"] {
+    background-color: red; /* Rojo para el igual */
+}
+
+/* Estilo especial para el botón igual */
+.equals {
+    grid-row: 6 / 7;
+    grid-column: 4 / 5;
+    height: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .calculator {
+        width: 90%;
+    }
+
+    .buttons {
+        grid-template-rows: repeat(6, 50px);
+        gap: 8px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    #display {
+        height: 40px;
+        font-size: 20px;
+    }
+}

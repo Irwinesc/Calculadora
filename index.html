@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con HTML, CSS y JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 class="title">Calculadora</h1>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <!-- Fila 1 -->
+            <button class="btn" data-area="c" onclick="clearDisplay()">C</button>
+            <button class="btn" data-area="parenthesis-left" onclick="appendToDisplay('(')">(</button>
+            <button class="btn" data-area="parenthesis-right" onclick="appendToDisplay(')')">)</button>
+            <button class="btn" data-area="percentage" onclick="appendToDisplay('%')">%</button>
+            <button class="btn" data-area="sqrt" onclick="appendToDisplay('√(')">√</button>
+
+            <!-- Fila 2 -->
+            <button class="btn" data-area="factorial" onclick="appendToDisplay('!')">!</button>
+            <button class="btn" data-area="sin" onclick="appendToDisplay('sin(')">sin</button>
+            <button class="btn" data-area="cos" onclick="appendToDisplay('cos(')">cos</button>
+            <button class="btn" data-area="tan" onclick="appendToDisplay('tan(')">tan</button>
+            <button class="btn" data-area="power" onclick="appendToDisplay('^')">^</button>
+
+
+
+            <!-- Fila 3 -->
+            <button class="btn" data-area="π" onclick="appendToDisplay('π')">π</button>
+            <button class="btn" data-area="7" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" data-area="8" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" data-area="9" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" data-area="divide" onclick="appendToDisplay('/')">/</button>
+
+            <!-- Fila 4 -->
+            <button class="btn" data-area="log" onclick="appendToDisplay('log10(')">log</button>
+            <button class="btn" data-area="4" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" data-area="5" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" data-area="6" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" data-area="multiply" onclick="appendToDisplay('*')">*</button>
+
+            <!-- Fila 5 -->
+            
+            <button class="btn" data-area="ln" onclick="appendToDisplay('ln(')">ln</button>
+            <button class="btn" data-area="1" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" data-area="2" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" data-area="3" onclick="appendToDisplay('3')">3</button>
+            <button class="btn" data-area="subtract" onclick="appendToDisplay('-')">-</button>
+
+            <!-- Fila 6 -->
+            <button class="btn" data-area="e" onclick="appendToDisplay('e')">e</button>
+            <button class="btn" data-area="0" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" data-area="decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="btn equals" data-area="equals" onclick="calculateResult()">=</button>
+            <button class="btn" data-area="add" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.1.1/math.js"
+        integrity="sha512-fMI/ndUubOcpzblrAaOFszYIE2iDKua+Cxg9dZp3cAkhsRWEHHbKtFCElHEQ50viX502yj7nFEEcxq2SOTNrIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
